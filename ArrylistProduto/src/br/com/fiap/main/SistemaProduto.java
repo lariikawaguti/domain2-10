@@ -23,6 +23,17 @@ public class SistemaProduto {
 	static double real(String j) {
 		return Double.parseDouble(JOptionPane.showInputDialog(j));
 	}
+	
+	//valor total
+	static double valorTotal (List<Produto> lp, Produto p) {
+		double total =0;
+		
+		for(Produto pr: lp) {
+			total += pr.getValor() * pr.getQuantidade();
+			
+		}
+		return total;
+	}
 
 	
 	public static void main(String[] args) {
@@ -52,6 +63,8 @@ public class SistemaProduto {
 					           "\nQuantidade: " + produto.getQuantidade()+
 					           "\nValor: " + produto.getValor());
 		}
+		
+		System.out.println("\n\n\nVALOR TOTAL: " + valorTotal(listaProdutos,objetoProduto));
 
 	}
 
